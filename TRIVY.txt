@@ -1,2 +1,4 @@
 curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh -s -- -b /usr/local/bin
-
+sudo mkdir -p /var/tmp/trivy
+sudo chmod 1777 /var/tmp/trivy
+TMPDIR=/var/tmp/trivy trivy image nginx:latest
